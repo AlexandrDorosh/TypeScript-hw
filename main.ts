@@ -87,11 +87,11 @@
 
 // ANSWER 2
 
-// function concat(text1: string, text2: string) {
+// function concat(text1: string, text2: string): string {
 //         return text1 + text2
 //     }
 //
-//     concat('Alex', 'OKTEN')
+// console.log(concat('Alex', 'OKTEN'));
 
 
 // EXERCISE 3
@@ -155,48 +155,104 @@
 
 // ANSWER 4
 
-// interface Animal{
-//     go: (animal: string) => string;
-// }
-//
-// function kindAnimal(animal: Animal){
-//
-// }
-//
-// kindAnimal({
-//     go: function (animal){
-//         return `${animal}`
-//     }})
-//
-// class Cat implements Animal{
-//     go(animal: string): string{
-//         return `${animal}`
-//     };
-//     }
-//
-// class Bird implements Animal{
-//     go(animal: string): string{
-//         return `${animal}`
-//     };
-// }
-//
-// class Fish implements Animal{
-//     go(animal: string): string{
-//         return `${animal}`
-//     };
-// }
-//
-// const animals: Animal[] = [
-//     new Cat(),
-//     new Bird(),
-//     new Fish()
-// ]
-//
-// const cat = animals[0] as Cat;
-// cat.go('I am walk');
-//
-// const bird = animals[1] as Bird;
-// bird.go('I am fly');
-//
-// const fish = animals[2] as Fish;
-// fish.go('I am swim');
+ interface Animal{
+     go: (animal: string) => string;
+     speak: (animal: string) => string;
+     info: (type: string, paws: number, colorSkins: string, wool: boolean) => string;
+ }
+
+ function kindAnimal(animal: Animal){
+
+ }
+
+ kindAnimal({
+     go: function (animal){
+         return `${animal}`
+     },
+     speak: function (animal){
+         return `${animal}`
+     },
+     info: function (type, paws, colorSkins, wool){
+         return (
+             `type: ${type},
+             paws: ${paws},
+             colorSkins: ${colorSkins},
+             wool: ${wool}`
+         )
+     }
+ })
+
+ class Cat implements Animal{
+     go(animal: string): string{
+         return `${animal}`
+     };
+     speak(animal: string): string{
+         return `${animal}`
+     };
+     info(type: string, paws: number, colorSkins: string, wool: boolean): string{
+         return (
+             `type: ${type},
+             paws: ${paws},
+             colorSkins: ${colorSkins},
+             wool: ${wool}`
+         )
+     }
+}
+
+ class Bird implements Animal{
+     go(animal: string): string{
+         return `${animal}`
+     };
+     speak(animal: string): string{
+         return `${animal}`
+     };
+     info(type: string, paws: number, colorSkins: string, wool: boolean): string{
+         return (
+             `type: ${type},
+             paws: ${paws},
+             colorSkins: ${colorSkins},
+             wool: ${wool}`
+         )
+     }
+ }
+
+ class Fish implements Animal{
+     go(animal: string): string{
+         return `${animal}`
+     };
+     speak(animal: string): string{
+         return `${animal}`
+     };
+     info(type: string, paws: number, colorSkins: string, wool: boolean): string{
+         return (
+             `type: ${type},
+             paws: ${paws},
+             colorSkins: ${colorSkins},
+             wool: ${wool}`
+         )
+     }
+ }
+
+ const animals: Animal[] = [
+     new Cat(),
+     new Bird(),
+     new Fish()
+ ]
+
+ const cat = animals[0] as Cat;
+cat.go('I am walk');
+cat.speak('I to speak mayy');
+cat.info('cat', 4, 'gray', true);
+console.log(cat.go('I am walk'));
+console.log(cat.speak('I to speak mayy'));
+console.log(cat.info('cat', 4, 'gray', true))
+
+const bird = animals[1] as Bird;
+ bird.go('I am fly');
+ bird.speak('I to speak song');
+bird.info('bird', 2, 'white', false);
+
+ const fish = animals[2] as Fish;
+ fish.go('I am swim');
+ fish.speak('I to speak bool bool');
+fish.info('fish', 0, 'silver', false);
